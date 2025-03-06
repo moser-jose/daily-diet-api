@@ -1,0 +1,51 @@
+{
+  "name": "daily-diet-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup src --out-dir build",
+    "dev": "tsx watch src/server.ts",
+    "lint": "eslint src --ext .ts",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
+    "test:e2e": "vitest run --dir src/http",
+    "test:e2e:watch": "vitest --dir src/http",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write 'src/**/*.ts'"
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "2.4.6",
+    "@types/node": "22.13.9",
+    "@types/supertest": "6.0.2",
+    "@typescript-eslint/eslint-plugin": "8.26.0",
+    "@typescript-eslint/parser": "8.26.0",
+    "@vitest/coverage-c8": "0.33.0",
+    "@vitest/ui": "3.0.7",
+    "eslint": "9.21.0",
+    "eslint-config-prettier": "10.0.2",
+    "eslint-plugin-prettier": "5.2.3",
+    "prettier": "3.5.3",
+    "ts-node": "10.9.2",
+    "tsup": "8.4.0",
+    "tsx": "4.19.3",
+    "typescript": "5.8.2",
+    "vite-tsconfig-paths": "5.1.4",
+    "vitest": "3.0.7",
+    "vitest-tsconfig-paths": "3.4.1"
+  },
+  "dependencies": {
+    "@fastify/cookie": "11.0.2",
+    "@fastify/jwt": "9.0.4",
+    "@prisma/client": "6.4.1",
+    "bcryptjs": "3.0.2",
+    "dayjs": "1.11.13",
+    "dotenv": "16.4.7",
+    "fastify": "5.2.1",
+    "prisma": "6.4.1",
+    "supertest": "7.0.0",
+    "zod": "3.24.2"
+  }
+}

@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  daily-diet-db:
+    container_name: daily-diet-db
+    image: bitnami/postgresql:15
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DATABASE=daily-diet
+    volumes:
+      - daily-diet-data:/bitnami/postgresql
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U docker -d daily-diet"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - daily-diet-network
+
+volumes:
+  daily-diet-data:
+    driver: local
+
+networks:
+  daily-diet-network:
+    driver: bridge
