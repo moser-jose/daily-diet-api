@@ -77,19 +77,23 @@ The Daily Diet API is an application for daily diet control, allowing users to r
 
 ```bash
 # Install dependencies
-npm install
+yarn
 
 # Configure environment
 cp .env.example .env
 
+# Docker
+docker compose up -d
+
+# Migrations 
+
+npx prisma migrate dev
+
 # Run migrations
-npm run migrate
+yarn run migrate
 
 # Start in development
-npm run dev
-
-# Start in production
-npm run start
+yarn run dev
 ```
 
 ## API Routes
